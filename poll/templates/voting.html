@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block formType %}Voting{% endblock formType %}
+{% block form %}
+<div class="form-holder">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="alert alert-warning alert-dismissible ml-5 mr-5">
+    {% for message in messages %}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h5 class="text-center">{{ message }}.</h5>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endwith %}
+  <div class="form-content">
+    <div class="form-items">
+      <h3>Voting</h3>
+      <p>Vote For Your Co-Ordinator</p>
+      <div class="page-links">
+        <a href="{{ url_for('club_poll_information') }}" class="m-3">Information</a><a href="{{ url_for('club_poll_voting') }}" class="active m-3">Voting</a><a href="#" class="m-3">Become Candidate</a>
+      </div>
+      <div class="d-flex justify-content-center flex-wrap flex-column">
+        {% for x in candidates %}
+        <div class="card text-center m-3">
+          <div class="card-header">Name - {{x['name']}}</div>
+          {% if x['position'] == 0 %}
+          <div class="card-body">Post - President</div>
+          {% elif x['position'] == 1 %}
+          <div class="card-body">Post - 1st Year Coordinator</div>
+          {% elif x['position'] == 2 %}
+          <div class="card-body">Post - 2nd Year Coordinator</div>
+          {% elif x['position'] == 3 %}
+          <div class="card-body">Post - 3rd Year Coordinator</div>
+          {% elif x['position'] == 0 %}
+          <div class="card-body">Post - Resource Manager</div>
+          {% endif %}
+          <div class="card-body">Total Votes - {{x['votes']}}</div>
+          <div class="card-footer bg-primary"><a href="{{url_for('club_poll_voting_vote', kid=x['_id'])}}" style="color: black;">Vote Me</a></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock form %}

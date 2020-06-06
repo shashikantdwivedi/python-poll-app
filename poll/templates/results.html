@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block formType %}Become Candidate{% endblock formType %}
+{% block form %}
+<div class="form-holder">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="alert alert-primary alert-dismissible ml-5 mr-5">
+    {% for message in messages %}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h5 class="text-center">{{ message }}.</h5>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endwith %}
+  <div class="form-content">
+    <div class="form-items">
+      <h3>Become Candidate</h3>
+      <p>Become A Candidate In This Poll</p>
+      <div class="page-links">
+        <a href="{{ url_for('club_poll_information') }}" class="m-3">Information</a><a href="{{ url_for('club_poll_voting') }}" class="m-3">Voting</a><a href="{{ url_for('club_poll_become_candidate') }}">Become Candidate</a><a
+          href="{{ url_for('club_poll_results') }}" class="m-3" class="active m-3">Live Result</a>
+      </div>
+      <div class="m-3">
+        <h5>President</h5>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock form %}

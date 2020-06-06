@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block formType %}Poll Information{% endblock formType %}
+{% block form %}
+<div class="form-holder">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="alert alert-warning alert-dismissible ml-5 mr-5">
+    {% for message in messages %}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h5 class="text-center">{{ message }}.</h5>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endwith %}
+  <div class="form-content">
+    <div class="form-items">
+      <h3>C.S.E Club Polling</h3>
+      <p>This voting is held for choosing coordinators for C.S.E club for upcoming semester.</p>
+      <p>**Voting has started**</p>
+      <div class="page-links">
+        <a href="{{ url_for('club_poll_information') }}" class="active m-3">Information</a><a href="{{ url_for('club_poll_voting')}}" class="m-3">Voting</a><a href="#" class="m-3">Become Candidate</a>
+      </div>
+      <div class="m-3">
+        <h5>About C.S.E Club</h5>
+        <ul>
+          <li class="m-2">Basically, this club is for all the students who are interested in computer science or they have some positive intentions to learn something in computer science field.</li>
+          <li class="m-2">In this club we have to organise 3 to 4 university level evnets/activites.</li>
+          <li class="m-2">In this club small-small activites were performed on daily basis. Basically in last 3 classes.</li>
+          <li class="m-2">It is not necessary that everyone should know programming to join this club. If anyone who is not interested in programming there are lots of option for them other then programming.</li>
+          <li class="m-2">There will be long term activites and short term activites</li>
+          <li class="m-2">Long Term activites like python, cloud computing, git etc.These activites are going to help everyone for long term.</li>
+          <li class="m-2">Short Term activites like small projects, large projects, team collobration, and many more activites.</li>
+          <li class="m-2">This will not going to affect your attendance at all.</li>
+          <li class="m-2">You are free to go to lab and practice in free time other than last 3 classes.</li>
+        </ul>
+
+        <h5>Please read instructions carefully</h5>
+        <ol>
+          <li class="m-2">One student can only stand for one post only.</li>
+          <li class="m-2">Student can't vote for themself.</li>
+          <li class="m-2">Student can manipulate other students to vote them.</li>
+          <li class="m-2">Only C.S.E Club students can vote in this poll.</li>
+          <li class="m-2">It is highly recommedned that student only stand for post if they think that they deserve the post.</li>
+          <li class="m-2">As all the students finish their voting the poll will end.</li>
+        </ol>
+        <h5>Post's Responsibility</h5>
+        <ol>
+          <li class="m-2">
+            <h6>President</h6>A student, who is responsible for all the activites that are organised. Students of all other post have to submit the report of the activites held by them.The President is answerable to all the questions of the <b>HOD of
+              C.S.E Department.</b>
+          </li>
+          <li class="m-2">
+            <h6>1<sup>st</sup> Year Coordinator</h6>Student coordinator of 1st year is going to manage all the activities that held for first year students.And he/she is going to submit the weekly report of all the activites to the <b>President</b>.
+          </li>
+          <li class="m-2">
+            <h6>2<sup>nd</sup> Year Coordinator</h6>Student coordinator of 2nd year is going to manage all the activities that held for second year students.And he/she is going to submit the weekly report of all the activites to the <b>President</b>.
+          </li>
+          <li class="m-2">
+            <h6>3<sup>rd</sup> Year Coordinator</h6>Student coordinator of 3rd year is going to manage all the activities that held for third year students.And he/she is going to submit the weekly report of all the activites to the <b>President</b>.
+          </li>
+          <li class="m-2">
+            <h6>Resource Manager</h6>Student coordinator of resource manager has the responsibility to manage all the resource that were needed by the other coordinator for their activities.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock form %}

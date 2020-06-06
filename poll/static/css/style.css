@@ -1,0 +1,25 @@
+/*
+  Theme Name: NewBiz
+  Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
+  Author: BootstrapMade.com
+  License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
+body, html {
+  font-family: 'Josefin Sans';
+}
+
+p,a,span {
+  font-family: 'Josefin Sans';
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Righteous';
+  font-weight: 100px;
+}
