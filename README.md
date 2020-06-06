@@ -5,8 +5,10 @@
 It is a online voting application build for Cy-Fi Club of Career Point University. In this the student of Computer Science Department can come and vote for the person standing for a particular position.
 
 ![](README/ss1.png)
+<hr />
 
 ![](README/ss2.png)
+<hr />
 
 ![](README/ss3.png)
 
