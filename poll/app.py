@@ -2,7 +2,8 @@ from flask import Flask, render_template, redirect, request, url_for, flash
 import database_functions as db_fun
 
 app = Flask(__name__)
-app.secret_key = "May the best man win"
+# TODO - Replace SECRET-KEY with your application secret key
+app.secret_key = "SECRET-KEY"
 
 
 @app.route("/")
